@@ -1,0 +1,31 @@
+
+
+<div class="todo-container">
+  <div class="mat-h1">ToDo App</div>
+
+  <form #todoForm="ngForm" class="todo-form"> 
+    <button class="todo-form__random-button" mat-stroked-button (click)="getRandomTodo()">
+      Get random Todo
+    </button>
+    
+    <mat-form-field class="todo-form__input-field">
+      <input  matInput [(ngModel)]="newTodo.title" #title="ngModel" name="title" id="title">
+    </mat-form-field>
+    
+    <button class="todo-form__save-button" mat-flat-button color="primary" (click)="saveTodo(newTodo)">
+      Save todo
+    </button>
+    
+  </form>
+  
+  <mat-action-list *ngFor="let todo of (todos | async )" class="todo-list">
+    <mat-list-item (click)="changeStateOfTodo(todo)" >
+      {{todo.title}}
+      {{todo.completed}}
+      <mat-checkbox
+        [checked]="todo.completed"
+      >        
+      </mat-checkbox>
+    </mat-list-item>
+  </mat-action-list>
+</div>
