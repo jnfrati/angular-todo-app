@@ -1,0 +1,24 @@
+# The version of the porter.yaml being used
+version: v1
+
+# The set of resources being deployed
+resources:
+  
+- # The name of the resource being created
+  name: web
+
+  # The driver being used (see "drivers" section). If this isn't set, this
+  # defaults to porter.deploy
+  driver: porter.deploy
+
+  # The source that the driver should use. 
+  source:
+    name: web
+    repo: https://charts.getporter.dev
+    version: v0.57.0
+
+  # The target that the driver should use.
+  target:
+    project: 12
+    cluster: 12
+    namespace: default
