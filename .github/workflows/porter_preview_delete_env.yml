@@ -1,0 +1,19 @@
+"on":
+  pull_request:
+    types:
+    - closed
+name: Porter Preview Environment
+jobs:
+  porter-delete-preview:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Delete Porter preview env
+      timeout-minutes: 30
+      uses: porter-dev/porter-delete-preview-action@master
+      with:
+        cluster: "12"
+        host: https://dashboard.dev.getporter.dev
+        installation_id: "21704327"
+        namespace: pr-${{ github.event.pull_request.number }}-angular-todo-app
+        project: "12"
+        token: ${{ secrets.PORTER_TOKEN_12 }}
