@@ -14,6 +14,7 @@ export class TodoService {
 
   public getTodos(): Observable<Todo[]>{
     return new Observable<Todo[]>(subscriber=>{
+      console.log(this.todos)
       subscriber.next(this.todos);
     })
   }

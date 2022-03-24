@@ -1,0 +1,11 @@
+version: v1
+resources:
+- name: web
+  source:
+    name: web
+  config:
+    build:
+      method: pack
+      context: ./
+  values:
+    port: 4200
