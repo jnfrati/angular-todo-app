@@ -29,15 +29,15 @@ jobs:
       uses: porter-dev/porter-preview-action@v0.2.0
       with:
         action_id: ${{ github.run_id }}
-        cluster: "34"
-        host: https://dashboard.dev.getporter.dev
-        installation_id: "21704327"
+        cluster: "83"
+        host: https://dashboard.staging.getporter.dev
+        installation_id: "20814681"
         namespace: pr-${{ github.event.inputs.pr_number }}-angular-todo-app
         pr_branch_from: ${{ github.event.inputs.pr_branch_from }}
         pr_branch_into: ${{ github.event.inputs.pr_branch_into }}
         pr_id: ${{ github.event.inputs.pr_number }}
         pr_name: ${{ github.event.inputs.pr_title }}
-        project: "3"
+        project: "72"
         repo_name: angular-todo-app
         repo_owner: jnfrati
-        token: ${{ secrets.PORTER_TOKEN_3 }}
+        token: ${{ secrets.PORTER_TOKEN_72 }}
